@@ -87,11 +87,12 @@
             @yield('content')
         </main>
         <footer>
-            <a href="{{ route('index') }}">Home Page</a>
+            <a href="{{ route('index') }}">Homepage</a>
+            <a href="{{ route('index') }}">Information</a>
             <a href="{{ route('index') }}">Help Contact</a>
-            <a href="{{ route('index') }}">About Us</a>
-            <a href="{{ route('index') }}">Privacy Policy</a>
             <a href="{{ route('index') }}">Terms & Conditions</a>
+            <a href="{{ route('index') }}">About Us</a>
+            <a href="{{ route('index') }}">Privacy Policy</a>         
         </footer>
     </div>
 </body>
