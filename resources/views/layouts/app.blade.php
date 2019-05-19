@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BigDeal') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -17,14 +17,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-red shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" style="color: #fff;" href="{{ url('/') }}">
+                    {{ config('app.name', 'BigDeal') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,24 +33,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+            
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <form method="POST" role="search" action="{{ route('listing.search') }}">
-                            @csrf
-                            <input type="text" name="search">
-                            <button type="submit">Search</button>
+                            @csrf    
+                            <div class="search">                      
+                            <input type="text" name="search" placeholder="Search offers...">
+                            <button type="submit" class="search-btn" style="color: #fff;">Search</button>   
+                            </div>            
                         </form>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" onmouseover="this.style.color='#dd0000';" onmouseout="this.style.color='#fff';" style="color: #fff; font-weight: 700;">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" id="reg-link" href="{{ route('register') }}" onmouseover="this.style.color='#dd0000';" onmouseout="this.style.color='#fff';" style="color: #fff; font-weight: 700;">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -87,12 +89,16 @@
             @yield('content')
         </main>
         <footer>
-            <a href="{{ route('index') }}">Homepage</a>
-            <a href="{{ route('index') }}">Information</a>
-            <a href="{{ route('index') }}">Help Contact</a>
-            <a href="{{ route('index') }}">Terms & Conditions</a>
-            <a href="{{ route('index') }}">About Us</a>
-            <a href="{{ route('index') }}">Privacy Policy</a>         
+            <div class="footer-nav-links">
+            <a href="{{ route('index') }}" style="color: #333333;">Home Page |</a>
+            <a href="{{ route('index') }}" style="color: #333333;">Information |</a>
+            <a href="{{ route('index') }}" style="color: #333333;">Help & Contact |</a>
+            <a href="{{ route('index') }}" style="color: #333333;">Terms & Conditions |</a>
+            <a href="{{ route('index') }}" style="color: #333333;">About Us |</a>
+            <a href="{{ route('index') }}" style="color: #333333;">Privacy Policy</a>
+            <br>
+            <span>BigDeal &copy; 2019</span>
+        </div>
         </footer>
     </div>
 </body>
