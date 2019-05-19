@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -4266,7 +4266,8 @@ input[type=button].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
+  font-size: 19px;
+  padding: 5px;
 }
 
 .nav-link:hover,
@@ -4353,7 +4354,6 @@ input[type=button].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
 }
 
 .navbar > .container,
@@ -4369,9 +4369,12 @@ input[type=button].btn-block {
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
   margin-right: 1rem;
-  font-size: 1.125rem;
+  font-size: 2rem;
   line-height: inherit;
   white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .navbar-brand:hover,
@@ -4385,6 +4388,123 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+
+.search{
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  padding: 3px;
+}
+
+.search input[type=text]{
+  width: 500px;
+  border-radius: 3px;
+  outline: none;
+  padding-left: 10px;
+  height: 34px;
+}
+
+@media (max-width: 992px) and (min-width: 768px) { 
+  .search{
+    margin-left: -195px;
+  }
+  .search input[type=text] { 
+    width: 300px; 
+  } 
+}
+
+/* style under 768px */
+@media (max-width: 767px) and (min-width: 320px){ 
+  .search{
+    margin-left: -144px;
+  }
+  .search input[type=text] { 
+    width: 200px; 
+  }
+  .nav-item{
+    margin-top: 60px;
+  }
+  .nav-link{ 
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  #reg-link{
+    margin-top: -50px;
+  }
+  .footer-nav-links{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* style under 320px */
+@media (max-width: 319px){
+  .search{
+    margin: 0;
+    text-align: center;
+    left: 10%;
+  }
+  .search input[type=text] {  
+    display: block;
+    width: calc(100% - 1em);
+    height: calc(1.6em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .search-btn{
+    display: inline-block;
+  }
+  .nav-item{
+    margin-top: 80px;
+  }
+  .nav-link{ 
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  #reg-link{
+    margin-top: -50px;
+  }
+  .footer-nav-links{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* placeholder italic style */
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+:-moz-placeholder {
+   font-style: italic;  
+}
+::-moz-placeholder {
+   font-style: italic;  
+}
+:-ms-input-placeholder {  
+   font-style: italic; 
+}
+
+.search input[type=text]:focus{
+  border: 2px solid #5e5e5e;
+}
+
+.search-btn{
+  border-radius: 3px; 
+  background-color: #b70101;  
+  outline: none;
+}
+
+.search-btn:hover{
+  background-color: #930000;
+}
+
+.search-btn:focus{
+  outline: none;
 }
 
 .navbar-nav .nav-link {
@@ -4421,6 +4541,7 @@ input[type=button].btn-block {
 .navbar-toggler:hover,
 .navbar-toggler:focus {
   text-decoration: none;
+  outline: none;
 }
 
 .navbar-toggler-icon {
@@ -4431,6 +4552,13 @@ input[type=button].btn-block {
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%;
+}
+
+.footer-nav-links{
+  text-align:center;  
+  bottom: 10px;
+  width:100%;
+  position: relative;
 }
 
 @media (max-width: 575.98px) {
@@ -4446,7 +4574,7 @@ input[type=button].btn-block {
     flex-flow: row nowrap;
     justify-content: flex-start;
   }
-
+  
   .navbar-expand-sm .navbar-nav {
     flex-direction: row;
   }
@@ -4468,6 +4596,7 @@ input[type=button].btn-block {
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+
   }
 
   .navbar-expand-sm .navbar-toggler {
@@ -4654,7 +4783,8 @@ input[type=button].btn-block {
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+  border-radius: 3px;
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
@@ -6823,8 +6953,8 @@ button.bg-dark:focus {
   background-color: #1d2124 !important;
 }
 
-.bg-white {
-  background-color: #fff !important;
+.bg-red {
+  background-color: #cc0000; !important;
 }
 
 .bg-transparent {
@@ -8578,7 +8708,7 @@ button.bg-dark:focus {
 
 .ml-auto,
 .mx-auto {
-  margin-left: auto !important;
+  margin-left: auto !important; 
 }
 
 @media (min-width: 576px) {
@@ -10661,4 +10791,3 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-
