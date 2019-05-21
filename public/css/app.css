@@ -4400,9 +4400,14 @@ input[type=button].btn-block {
 .search input[type=text]{
   width: 500px;
   border-radius: 3px;
+  border: none;
   outline: none;
   padding-left: 10px;
   height: 34px;
+}
+
+#search-icon{
+  display: none;
 }
 
 @media (max-width: 992px) and (min-width: 768px) { 
@@ -4416,10 +4421,37 @@ input[type=button].btn-block {
 
 @media (max-width: 767px) and (min-width: 321px){ 
   .search{
-    margin-left: -144px;
+    margin: 0;
+    text-align: center;
+    left: 0%;
+    right: 10%;
   }
-  .search input[type=text] { 
-    width: 200px; 
+  .search input[type=text] {
+    width: 80%;
+    height: calc(1.3em + 0.75rem + 2px);
+    padding: 0.375rem 1.10rem;
+    background-color: #cc0000;
+    border-bottom: 2px solid #fff;
+  }
+  .search input:hover{
+    border: 2px dotted #000533;
+  }
+  #s-btn{
+    display: none;
+  }
+  #search-icon{
+    display: inline-block;
+    height: calc(1.3em + 0.75rem + 2px);
+    padding: 0.300rem 0.650rem;
+    float: right;
+    margin: 0;
+    position: absolute;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+  }
+  #search-icon:hover{
+    opacity: 0.7;
   }
   .nav-item{
     margin-top: 60px;
@@ -4428,6 +4460,9 @@ input[type=button].btn-block {
     width: 100%;
     display: block;
     text-align: center;
+  }
+  .nav-link:active{
+    border: 2px dotted #000533;
   }
   #reg-link{
     margin-top: -50px;
@@ -4442,34 +4477,65 @@ input[type=button].btn-block {
   .search{
     margin: 0;
     text-align: center;
-    left: 10%;
-    right: 10%;
+    left: 0%;
+    right: 15%;
   }
   .search input[type=text] {  
-    display: block;
-    width: 100%;
-    height: calc(1.6em + 0.75rem + 2px);
+    width: 80%;
+    height: calc(1.3em + 0.75rem + 2px);
     padding: 0.375rem 1.10rem;
+    background-color: #cc0000;
+    border-bottom: 2px solid #fff;
   }
-  .search-btn{
+  .search input:hover{
+    border: 2px dotted #000533;
+  }
+  #s-btn{
+    display: none;
+  }
+  #search-icon{
     display: inline-block;
-    margin-top: 10px;
-    text-align: center;
+    height: calc(1.3em + 0.75rem + 2px);
+    padding: 0.300rem 0.650rem;
+    float: right;
+    margin: 0px;
+    position: absolute;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+  }
+  #search-icon:hover{
+    opacity: 0.7;
   }
   .nav-item{
-    margin-top: 100px;
+    margin-top: 60px;
   }
   .nav-link{ 
     width: 100%;
     display: block;
     text-align: center;
   }
+  .nav-link:active{
+    border: 2px dotted #000533;
+  }
   #reg-link{
-    margin-top: -75px;
+    margin-top: -50px;
   }
   .footer-nav-links{
     width: 100%;
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape){
+   .search{
+    margin: 0;
+    text-align: center;
+    left: 5%;
+    right: 10%;
+  }
+  .search input[type=text] {  
+    width: 80%;
   }
 }
 
@@ -4540,6 +4606,7 @@ input[type=button].btn-block {
 .navbar-toggler:focus {
   text-decoration: none;
   outline: none;
+  border: 1px solid #00040a;
 }
 
 .navbar-toggler-icon {
@@ -4798,7 +4865,6 @@ input[type=button].btn-block {
 
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar-light .navbar-toggler-icon {
