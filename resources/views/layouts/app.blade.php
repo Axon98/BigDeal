@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -42,7 +43,8 @@
                             @csrf    
                             <div class="search">                      
                             <input type="text" name="search" placeholder="Search offers...">
-                            <button type="submit" class="search-btn" style="color: #fff;">Search</button>   
+                            <button type="submit" class="search-btn" id="s-btn" style="color: #fff;">Search</button>
+                            <button type="submit" id="search-icon"><i class="fa fa-search"></i></button>   
                             </div>            
                         </form>
                         <!-- Authentication Links -->
