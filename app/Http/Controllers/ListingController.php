@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Listing;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ListingController extends Controller
@@ -14,8 +15,33 @@ class ListingController extends Controller
      */
     public function main()
     {
-        $listings = Listing::get()->paginate(12);
+        // $listings = Listing::get()->paginate(12);
+        $now = Carbon::now();
+        for ($i = 0; $i < 6; $i++) {
+            $listings[] = ([
+                'id'     => $i,
+                'photo'       => 'https://via.placeholder.com/225',
+                'title'       => 'Title one',
+                'description' => 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+                'created'     => $now,
+            ]);
+        }
+
         return view('index', ['listings' => $listings]);
+    }
+
+    public function view($id)
+    {
+        // $listing = Listing::findOrFail($id);
+        $listing = ([
+            'id'     => $id,
+            'photo'       => 'https://via.placeholder.com/225',
+            'title'       => 'Title one',
+            'description' => 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+            'created'     => Carbon::now()
+        ]);
+
+        return view('view', ['listing' => $listing]);
     }
     /**
      * Display a listing of the resource.
