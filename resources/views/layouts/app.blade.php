@@ -18,13 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-red shadow-sm">
             <div class="container">
-                <a class="navbar-brand" style="color: #fff;" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'BigDeal') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,22 +38,19 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <form method="POST" role="search" action="{{ route('listing.search') }}">
-                            @csrf    
-                            <div class="search">                      
-                            <input type="text" name="search" placeholder="Search offers...">
-                            <button type="submit" class="search-btn" id="s-btn" style="color: #fff;">Search</button>
-                            <button type="submit" id="search-icon"><i class="fa fa-search"></i></button>   
-                            </div>            
+                        <form method="POST" role="search" action="{{ route('listing.search') }}" class="search-nav">
+                            @csrf                         
+                            <input id="commonSearchTerm" type="text" name="search" placeholder="Search offers...">
+                            <button id="searchButton" type="submit">Search</button>     
                         </form>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}" onmouseover="this.style.color='#dd0000';" onmouseout="this.style.color='#fff';" style="color: #fff; font-weight: 700;">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" id="reg-link" href="{{ route('register') }}" onmouseover="this.style.color='#dd0000';" onmouseout="this.style.color='#fff';" style="color: #fff; font-weight: 700;">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -91,13 +87,13 @@
             @yield('content')
         </main>
         <footer>
-            <div class="footer-nav-links">
-            <a href="{{ route('index') }}" style="color: #333333;">Home Page |</a>
-            <a href="{{ route('index') }}" style="color: #333333;">Information |</a>
-            <a href="{{ route('index') }}" style="color: #333333;">Help & Contact |</a>
-            <a href="{{ route('index') }}" style="color: #333333;">Terms & Conditions |</a>
-            <a href="{{ route('index') }}" style="color: #333333;">About Us |</a>
-            <a href="{{ route('index') }}" style="color: #333333;">Privacy Policy</a>
+            <div class="card-footer">
+            <a href="{{ route('index') }}">Home Page |</a>
+            <a href="{{ route('index') }}">Information |</a>
+            <a href="{{ route('index') }}">Help & Contact |</a>
+            <a href="{{ route('index') }}">Terms & Conditions |</a>
+            <a href="{{ route('index') }}">About Us |</a>
+            <a href="{{ route('index') }}">Privacy Policy</a>
             <br>
             <span>BigDeal &copy; 2019</span>
         </div>
