@@ -18,9 +18,9 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -32,9 +32,9 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -46,9 +46,9 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -62,15 +62,13 @@
                         </div>
 
                         <div class="form-group row">
-                        <div class="col-md-6 offset-md-4">
-                                <div class="input-group"> 
-                                <form class="input-group-text">                       
-                            <input type="radio" name="older16" value="yes"> I have more than 16 years
-                            <br/>
-                            <input type="radio" name="terms" value="yes"> I agree to the <a href="#">Terms & Conditions</a>
-                        </form>
-                        </div>
-                        </div>
+                            <div class="col-md-6 offset-md-4">
+                                <div class="input-group">                      
+                                    <input type="radio" name="older16" value="yes"> I have more than 16 years
+                                    <br/>
+                                    <input type="radio" name="terms" value="yes"> I agree to the <a href="#">Terms & Conditions</a>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group row mb-0">

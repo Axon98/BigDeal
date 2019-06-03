@@ -12,6 +12,7 @@
  */
 
 Route::get('/', 'ListingController@main')->name('index');
+
 Route::get('/listing/{id}', 'ListingController@view')->name('view');
 
 Route::get('/listings', 'ListingController@index')->name('listing.index');
