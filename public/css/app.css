@@ -4472,7 +4472,6 @@ input[type=button].btn-block {
 }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
   font-size: 1.125rem;
   line-height: 1;
   background-color: transparent;
@@ -4484,7 +4483,32 @@ input[type=button].btn-block {
 .navbar-toggler:focus {
   text-decoration: none;
   outline: none;
-  border: 1px solid #00040a;
+}
+
+#nav-toggle { 
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: relative;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -10px; 
+}
+#nav-toggle span:after {
+  bottom: -5px;
 }
 
 .navbar-toggler-icon {
@@ -4543,8 +4567,8 @@ input[type=button].btn-block {
 @media (max-width: 767.98px) {
   .navbar-expand-md > .container,
   .navbar-expand-md > .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 5px;
+    padding-left: 8px;
   }
 }
 
