@@ -1,3 +1,17 @@
+$(document).ready(function(){
+  $('#nav-toggle').click(function(){
+    $(this).toggleClass('open');
+  });
+});
+
+$(function(){
+  $('.nav-link').each(function() {
+    if ($(this).prop('href') == window.location.href) {
+      $(this).addClass('active');
+    }
+  });
+});
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
