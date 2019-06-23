@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,5 @@ Route::get('/listing/{id}', 'ListingController@view')->name('view');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
