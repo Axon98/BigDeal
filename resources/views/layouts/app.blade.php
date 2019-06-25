@@ -59,7 +59,7 @@
                                 <a class="nav-link" href="{{ route('listing.create') }}">Post Ad</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="myAcc" href="{{ route('listing.create') }}">My Account</a>
+                                <a class="nav-link" id="myAcc" href="{{ route('profile.index') }}">My Account</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -96,11 +96,11 @@
         <footer>
             <div class="card-footer">
             <a href="{{ route('index') }}">Home Page |</a>
-            <a href="{{ route('index') }}">Information |</a>
-            <a href="{{ route('index') }}">Help & Contact |</a>
-            <a href="{{ route('index') }}">Terms & Conditions |</a>
-            <a href="{{ route('index') }}">About Us |</a>
-            <a href="{{ route('index') }}">Privacy Policy</a>
+            <a href="{{ route('information') }}">Information |</a>
+            <a href="{{ route('contact') }}">Help & Contact |</a>
+            <a href="{{ route('terms') }}">Terms & Conditions |</a>
+            <a href="{{ route('about') }}">About Us |</a>
+            <a href="{{ route('policy') }}">Privacy Policy</a>
             <br>
             <span>BigDeal &copy; 2019</span>
         </div>
