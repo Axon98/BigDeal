@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,14 +23,23 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-red shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-blue shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'BigDeal') }}
                 </a>
+               
+               <div class="search-wrapper">
+                    <div class="input-holder">
+                        <input type="search" name="search" class="search-input" placeholder="Type to search.."/>
+                        <button class="search-icon" onclick="searchToggle(this, event);">
+                            <span></span></button>
+                    </div>
+                                  
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <a id="nav-toggle" href="#"><span></span></a>
                 </button>
+                </div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
