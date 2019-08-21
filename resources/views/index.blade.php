@@ -4,11 +4,11 @@
 <div class="wrapper">
   <div class="postAd-myAcc">
     @guest
-     <a class="postAd-myAcc-btn" id="postAd-btn" href="{{ route('login') }}">Post Ad</a>
-     <a class="postAd-myAcc-btn" id="myAcc-btn" href="{{ route('login') }}">My Account</a>
+     <a class="postAd-myAcc-btn" id="postAd-btn" href="{{ route('login') }}">Post Ad ►</a>
+     <a class="postAd-myAcc-btn" id="myAcc-btn" href="{{ route('login') }}">My Account ►</a>
     @else
-     <a class="postAd-myAcc-btn" id="postAd-btn" href="{{ route('listing.create') }}">Post Ad</a>
-     <a class="postAd-myAcc-btn" id="myAcc-btn" href="{{ route('profile.index') }}">My Account</a>
+     <a class="postAd-myAcc-btn" id="postAd-btn" href="{{ route('listing.create') }}">Post Ad ►</a>
+     <a class="postAd-myAcc-btn" id="myAcc-btn" href="{{ route('profile.index') }}">My Account ►</a>
     @endguest
   </div>
   <div class="filter">
